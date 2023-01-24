@@ -17,6 +17,11 @@ project(Qt
     LANGUAGES CXX C ASM
 )
 
+# Set max path length to 500 on Windows
+if (WIN32)
+    set(CMAKE_OBJECT_PATH_MAX 500)
+endif ()
+
 # Required so we can call ctest from the root build directory
 enable_testing()
 
